@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phương Thúy & Thái Hòa Wedding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #0f0f0f;
+    color: #eaeaea;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+.gold {
+    color: #d4af37;
+}
+
+.divider {
+    width: 60px;
+    height: 1px;
+    background: #d4af37;
+    margin: 20px auto;
+}
+
+.story {
+    text-align: left;
+    font-size: 16px;
+}
+
+.story p {
+    margin-bottom: 16px;
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <div class="subtitle">WEDDING INVITATION</div>
+        <h1>PHƯƠNG THÚY <span class="gold">&</span> THÁI HÒA</h1>
+        <div class="divider"></div>
+        <p>21 • 03 • 2026</p>
+        <p>(Tức ngày 02 • 02 Âm lịch)</p>
+    </div>
+</div>
+
+<!-- STORY -->
+<div class="section fade">
+    <h2 class="gold">Câu chuyện của chúng tôi</h2>
+    <div class="divider"></div>
+
+    <div class="story">
+        <p>Ở một góc chợ nhỏ giữa lòng Hà Nội, Thúy – cô gái bán cá – lớn lên cùng mùi tanh của nước, tiếng rao buổi sớm và những ngày mưu sinh vất vả. Cuộc sống của cô giản dị như chính con người cô: thật thà, mạnh mẽ và luôn nở nụ cười.</p>
+
+        <p>Một chiều mưa tầm tã, chợ vắng tanh. Thúy đang loay hoay che lại sạp cá thì một chiếc xe sang dừng trước cổng chợ. Người bước xuống là Hòa – một ông trùm bất động sản, quen với những tòa nhà cao tầng hơn là những con ngõ ẩm ướt.</p>
+
+        <p>Anh ghé vào trú mưa, vô tình đứng ngay trước sạp của Thúy.</p>
+
+        <p><i>“Anh mua cá không?”</i> – Thúy cười, giọng nhẹ nhưng ấm.</p>
+
+        <p>Hòa nhìn cô, rồi bật cười. Đã lâu lắm rồi anh mới thấy một nụ cười không toan tính.</p>
+
+        <p>Cơn mưa kéo dài, câu chuyện của họ cũng dài theo. Từ vài câu hỏi vu vơ, họ nói với nhau như đã quen từ rất lâu.</p>
+
+        <p>Ngày hôm đó, Hòa rời đi nhưng lòng lại ở lại nơi góc chợ nhỏ.</p>
+
+        <p>Và Thúy – cô gái bán cá – không ngờ rằng cơn mưa hôm ấy đã mang đến cho cô một mối duyên không giống bất kỳ điều gì trong cuộc đời giản dị của mình.</p>
+    </div>
+</div>
+
+<!-- EVENT -->
+<div class="section fade">
+    <h2 class="gold">Lễ Thành Hôn</h2>
+    <div class="divider"></div>
+
+    <p>📅 Ngày dương: 21/03/2026</p>
+    <p>🌙 Ngày âm: 02/02 Âm lịch</p>
+    <p>📍 Địa điểm: Hà Nội</p>
+</div>
+
+<script>
+// FADE EFFECT
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+<audio id="bg-music" loop>
+  <source src="tieu-thuyet-tinh-yeu.mp3" type="audio/mpeg">
+</audio>
+
+<div id="music-btn" onclick="toggleMusic()">
+  🔊
+</div>
+
+<style>
+#music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d4af37;
+    color: black;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+}
+</style>
